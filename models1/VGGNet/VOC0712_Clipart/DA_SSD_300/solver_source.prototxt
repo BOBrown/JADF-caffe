@@ -1,0 +1,30 @@
+train_net: "models/VGGNet/VOC0712_Clipart/DA_SSD_300/train.prototxt"
+test_net: "models/VGGNet/VOC0712_Clipart/DA_SSD_300/test_on_voc.prototxt"
+test_iter: 4952
+test_interval: 10000
+base_lr: 0.001
+display: 10
+max_iter: 120000
+lr_policy: "multistep"
+gamma: 0.10000000149
+momentum: 0.899999976158
+weight_decay: 0.000500000023749
+snapshot: 10000
+snapshot_prefix: "models/VGGNet/VOC0712_Clipart/DA_SSD_300/models/train_source"
+solver_mode: GPU
+device_id: 0
+debug_info: false
+snapshot_after_train: true
+test_initialization: false
+average_loss: 10
+
+stepvalue: 80000
+stepvalue: 100000
+stepvalue: 120000
+
+iter_size: 1
+type: "SGD"
+eval_type: "detection"
+ap_version: "11point"
+show_per_class_result: true
+show_pr: false
