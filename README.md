@@ -56,7 +56,7 @@ Note: Our Makefile.config file is recommended for building the caffe
 
 ## Preparation Step
 ### Download the dataset
-You can download the LMDB format of the PASCAL VOC and Clipart datasets \[[Dataset Page](https://drive.google.com/open?id=1lxy9UVtUijpt-6NL2qwZez1LwDD-d0Du)\], or preprocess the your own datasets according to the following steps:
+You can download the LMDB format of the PASCAL VOC and Clipart datasets \[[Dataset Page](https://drive.google.com/file/d/1L2M5MufYNn6mQbOvD0RzFoXHd5WyWyq3/view?usp=sharing)\], or preprocess the your own datasets according to the following steps:
 
 1. Construct a dataset folder in JADF-caffe/data/VOCdevkit with the following form: 
 ```
@@ -96,20 +96,20 @@ sh create_data.sh
    unzip voc_clipart.zip
    
 4. Download the pretrained-model.
-5. Copy VGG_ILSVRC_16_layers_fc_reduced.caffemodel(or VGG_VOC0712_SSD_300x300_iter_120000.caffemodel) to JADF-caffe/models/VGGNet/
+5. Copy VGG_ILSVRC_16_layers_fc_reduced.caffemodel(or VGG_VOC0712_SSD_300x300_iter_120000.caffemodel) to JADF-caffe/model/VGGNet/
 6. cd JADF-caffe
 7. make -j32 && make pycaffe -j32（If you are having issues compiling, and please refer to requirement.txt for installing several dependencies of caffe）
 8. For pre-training the source model：
    ```
-   sh jobs/VGGNet/VOC0712_Clipart/DA_SSD_300/train_source.sh
+   sh job/VGGNet/VOC0712_Clipart/DA_SSD_300/train_source.sh
    ```
    For performing the Unsupervised Domain Adaptation (UDA) from the source model：
    ```
-   sh jobs/VGGNet/VOC0712_Clipart/DA_SSD_300/voc_clip_da.sh
+   sh job/VGGNet/VOC0712_Clipart/DA_SSD_300/voc_clip_da.sh
    ```
    For performing the Unsupervised Few-shot Domain Adaptation (UFDA, 3-shot) from the source model：
    ```	 
-   sh jobs/VGGNet/VOC0712_Clipart/DA_SSD_300/voc_clip_fsda.sh
+   sh job/VGGNet/VOC0712_Clipart/DA_SSD_300/voc_clip_fsda.sh
    ```
    
 ## Selected cross-domain objec detection results
